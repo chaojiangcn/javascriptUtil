@@ -16,8 +16,8 @@ Object.prototype.toString.call(document); // "[object HTMLDocument]"
 
 // 判断数据类型
 function isType(content, type){
-  let initType = Object.prototype.toString.call(content)
-    return `[object ${type}]` == initType
+  let initType = Object.prototype.toString.call(content);
+  return `[object ${type}]` == initType
 }
 
 let isArray = (v) => isType(v,'Array') 
