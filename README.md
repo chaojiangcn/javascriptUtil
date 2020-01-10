@@ -1,7 +1,7 @@
 ## javascriptUtil
 记录开发中常用的javascript工具函数
 
-| 判断数据类型
+|  判断数据类型
 
 ```js
  // 判断数据类型
