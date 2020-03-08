@@ -40,6 +40,50 @@ let isNull = (v) => isType(v,'Null')
 5）箭头函数没有自己的this，所以不能用call()、apply()、bind()这些方法去改变this的指向.
 
 ```
+-  实现一个new函数
+```js
+// 1.生成一个对象
+// 2.获取原型
+// 3.绑定this
+// 4.返回新对象
+function create() {
+	// 生成一个新的对象
+	let obj = new Object();
+	// 获得构造函数
+	let Con = [].shift.call(arguments);
+	// 获取原型
+	obj.__proto__ = Con.prototype;
+	// 绑定this
+	let result = Con.apply(obj, arguments);
+
+	return typeof result === 'object' ? result : obj
+}
+```
+
+- 简易版防抖函数
+```js
+/**
+ *简易版防抖函数
+ *
+ * @param  {function} func    回调函数
+ * @param  {number}   wait    等待时间
+ * @
+ */
+function debounce(func, wait = 50) {
+	// 缓存一个定时器
+	let timer = 0;
+
+	// 这里返回每次实际调用的防抖函数
+	// 如果已经设置过定时器则清空定时器
+	// 开始执行一个定时器，延迟执行用户传入的方法
+	return function(...arguments) {
+		if (timer) {clearTimeout(timer)};
+		timer = setTimeout(() => {
+			func.apply(this, arguments);
+		},wait)
+	}
+}
+```
 
 > ### 网络相关
 - GET和POST的区别
