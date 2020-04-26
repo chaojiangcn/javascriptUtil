@@ -122,5 +122,3 @@ function isPlalindromeEF(value) {
 }
 ```
 
-		timer = setTimeout(() => {相关
-		timer = setTimeout(() => {
