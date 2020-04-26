@@ -96,3 +96,31 @@ function debounce(func, wait = 50) {
 6.Get请求的参数会被完整的保留在浏览器里面，Post方式不会
 7.Get只接受ASCAII字符，Post没有限制
 ```
+
+
+> ### 算法相关
+- 实现判断是不是回文字符串
+```js
+/**
+ * @description ES6实现判断是不是回文字符串
+ * @param {string} value 
+ */
+function isPlalindrome(value) {
+    if(typeof value !== 'string') return false;
+    return value.split('').reverse().join() === value
+}
+// ES5 版本
+function isPlalindromeEF(value) {
+    if(typeof value !== 'string') return false;
+    let i = 0, j = value.length-1;
+    while(i<j){
+        if(value.charAt(i) !== value.charAt(j)) return false
+        i++;
+        j--;
+    }
+    return true 
+}
+```
+
+		timer = setTimeout(() => {相关
+		timer = setTimeout(() => {
